@@ -5,11 +5,11 @@ function conectar(){
     $user ="root";
     $pass="";
     $server="localhost";
-    $db = "testDatabase";
+    $db = "testdatabase";
 
-    $con = mysql_connect($server,$user,$pass) or die ("Erro al conectar a BD".mysql_error());
+    $con = mysqli_connect($server,$user,$pass) or die ("Erro al conectar a servidor");
 
-    mysql_select_db($db,$con);
+    $dbcon = mysqli_select_db($con,$db) or die("No conecta a la base");
 
     return $con;
 
